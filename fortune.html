@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortune - Cetak Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background-color: #fff; color: #000; }
+    header {
+      background-color: #00024f;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 4px solid #ffef00;
+    }
+    header h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      background-color: #00024f;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    .slider-container {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .slide { display: none; }
+    .slide.active { display: block; }
+    .slide img {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      z-index: 10;
+    }
+    .prev { left: 10px; border-radius: 0 4px 4px 0; }
+    .next { right: 10px; border-radius: 4px 0 0 4px; }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #ffef00;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: white;
+      margin-top: 0.5rem;
+    }
+
+    .products {
+      background-color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .products h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-decoration: underline;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+    .product-item {
+      background-color: #00024f;
+      color: white;
+      padding: 1rem;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .product-item img {
+      width: 70%;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background-color: #00024f;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    .whatsapp img {
+      width: 50px;
+    }
+	
+	.products .product-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	  gap: 1.2rem;
+	  justify-items: center;
+	  margin: 0 auto;
+	  max-width: 880px;
+	}
+
+	@media (min-width: 768px) {
+	  .products .product-grid {
+		gap: 1rem; /* menyempitkan gap */
+		max-width: 720px; /* lebar maksimum grid saat desktop */
+	  }
+	}
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav {
+        flex-wrap: nowrap;
+        gap: 1rem;
+      }
+      .hero h2 { font-size: 2rem; }
+      .hero p { font-size: 1.2rem; }
+      .product-item {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FORTUNE</h1>
+    <nav>
+      <a href="#">Standing Banner Segitiga Lipat</a>
+      <a href="#">Papan Nama & Neon Box</a>
+      <a href="#">Banner Jaring Sound</a>
+      <a href="#">Produk Lain</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="slider-container">
+      <div class="slide active">
+        <img src="https://via.placeholder.com/320x400.png?text=Banner+1" alt="Banner1" />
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/320x400.png?text=Banner+2" alt="Banner2" />
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/320x400.png?text=Banner+3" alt="Banner3" />
+      </div>
+      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+    <h2>Standing Banner <span style="color: #ffef00">Kayu - Segitiga Lipat</span></h2>
+    <p>Harga Mulai Rp. <strong>100</strong>rb</p>
+  </div>
+
+  <div class="products">
+    <h3>Pilih Produk</h3>
+    <div class="product-grid">
+      <div class="product-item">
+        <img src="https://via.placeholder.com/80x80?text=Kayu" alt="Kayu">
+        <span>Standing Banner Kayu</span>
+      </div>
+      <div class="product-item">
+        <img src="https://via.placeholder.com/80x80?text=Besi" alt="Besi">
+        <span>Standing Banner Besi</span>
+      </div>
+      <div class="product-item">
+        <img src="https://via.placeholder.com/80x80?text=Neon" alt="Neon Box">
+        <span>Papan Nama & Neon Box</span>
+      </div>
+      <div class="product-item">
+        <img src="https://via.placeholder.com/80x80?text=Sound" alt="Sound">
+        <span>Banner Jaring Sound</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-info">
+      <div>
+        <strong>Alamat:</strong><br>
+        Perumahan Adzikro, Jalan Sigaran<br>
+        Desa Gondanglegi Kulon, Kec. Gondanglegi<br>
+        Kab. Malang - Jawa Timur
+      </div>
+      <div>
+        <strong>Telepon:</strong> 082245556934<br>
+        <strong>Whatsapp:</strong> (+62) 822-4555-6934<br>
+        <strong>Email:</strong> cetakspandukmalang@gmail.com
+      </div>
+      <p style="font-size: 0.8rem; margin-top: 1rem;">&copy; 2025 cetakbannermalang.com All rights reserved</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/628989898989?text=Halo%20saya%20mau%20pesan%20banner">
+    <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="Chat WA">
+  </a>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(n) {
+      slides.forEach((slide) => slide.classList.remove('active'));
+      slides[n].classList.add('active');
+    }
+
+    function plusSlides(n) {
+      slideIndex += n;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      showSlide(slideIndex);
+    }
+
+    setInterval(() => plusSlides(1), 5000);
+  </script>
+</body>
+</html>
