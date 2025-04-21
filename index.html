@@ -141,14 +141,17 @@
 	  gap: 1.2rem;
 	  justify-items: center;
 	  margin: 0 auto;
-	  max-width: 989px;
 	}
 
 	@media (min-width: 768px) {
 	  .products .product-grid {
 		gap: 1rem; /* menyempitkan gap */
-		 /* max-width: 720px; /* lebar maksimum grid saat desktop */
+		 max-width: 720px; /* lebar maksimum grid saat desktop */
 	  }
+
+    .products .product-grid{
+      max-width: 70%;
+    }
 	}
 
     @media (min-width: 768px) {
@@ -164,13 +167,14 @@
       .hero h2 { font-size: 2rem; }
       .hero p { font-size: 1.2rem; }
       .product-item {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
       }
     }
 
     .title-product{
       font-size: 13px;
+      font-weight: bold;
     }
   </style>
 </head>
